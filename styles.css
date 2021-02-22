@@ -1,0 +1,10 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+.btn-reg {
+      background-color: #0b578a;
+      color: #ffffff;
+}    
