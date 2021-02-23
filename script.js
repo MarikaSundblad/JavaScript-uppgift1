@@ -5,62 +5,64 @@ const lastName = document.querySelector('#lastName');
 const lastNameError = document.querySelector('#lastName-error');
 const email = document.querySelector('#email');
 const emailError = document.querySelector('#email-error');
-const btn = document.querySelector('#btn');
+// const btn = document.querySelector('#btn');
 const output = document.querySelector('#output');
-const inputs = document.querySelectorAll('input');
+// const inputs = document.querySelectorAll('input');
 
 // Validerar förnamn
 const validateFirstName = () => {
 
   let regEx = /[a-zA-Z]+\D+/;
     
-      if(!regEx.test(firstName.value)) {
-        firstNameError.innerText = 'You can not have numbers in your first name'
-        return 0;
-      }
-      else if (firstName.value.length < 2) {
-        firstNameError.innerText = 'You have to have at least 2 characters in your first name'
-        return 0;
-      }
-      else {
-        firstNameError.innerText = ''
-        return 1;
-      }
-    }
+  if(!regEx.test(firstName.value)) {
+    firstNameError.innerText = 'You can not have numbers in your first name'
+    return 0;
+  }
+  else if (firstName.value.length < 2) {
+    firstNameError.innerText = 'You have to have at least 2 characters in your first name'
+    return 0;
+  }
+  else {
+    firstNameError.innerText = ''
+    return 1;
+  }
+}
 
 // Validerar efternamn
 const validateLastName = () => {
 
+  // Kollar så det inte är några siffror i namnet
   let regEx = /[a-zA-Z]+\D+/;
     
-      if(!regEx.test(lastName.value)) {
-        lastNameError.innerText = 'You can not have numbers in your last name'
-        return 0;
-      }
-      else if (lastName.value.length < 2) {
-        lastNameError.innerText = 'You have to have at least 2 characters in your last name'
-        return 0;
-      }
-      else {
-        lastNameError.innerText = ''
-        return 1;
-      }
-    }
+  if(!regEx.test(lastName.value)) {
+    lastNameError.innerText = 'You can not have numbers in your last name'
+    return 0;
+  }
+  else if (lastName.value.length < 2) {
+    lastNameError.innerText = 'You have to have at least 2 characters in your last name'
+    return 0;
+  }
+  else {
+    lastNameError.innerText = ''
+    return 1;
+  }
+}
 
 // Validerar email
 const validateEmail = () => {
 
-      let regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  // Kollar emailen. Går inte att ha åäö innan @.
+  // Går att ha åäö efter @ då vissa kan ha åäö i sin domän och använder domänens mejl.
+  let regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-
-      if(regEx.test(email.value)) {
-            emailError.innerText = ''
-            return 1;
-      }
-      else {
-            emailError.innerText = 'You have to put in a valid email'
-            return 0;
-      }
+  if(regEx.test(email.value)) {
+    emailError.innerText = ''
+    return 1;
+  }
+  else {
+    emailError.innerText = 'You have to put in a valid email'
+    return 0;
+  }
 }
 
 // Skapa användare
