@@ -8,23 +8,30 @@
       <title>Members form</title>
 </head>
 <body>
-      <form id="form" class="container mt-5">
-            <div class="row">
-              <div class="col-3">
-                <label for="firstname"><input type="text" placeholder="First name" id="firstName" class="form-control"></label>
-                <div id="firstName-error"></div>
-            </div>            
-              <div class="col-3">
-                  <label for="lastname"><input type="text" placeholder="Last name" id="lastName" class="form-control"></label>
-                <div id="lastName-error"></div>
-            </div>             
+  <div class="pt-5">
+    <h2>Welcome!</h2>
+    <p>Fill out this form to registrat.</p>
+  </div>
+      <form id="form" class="container">
+            <div class="row mt-5 gy-2">
               <div class="col-4">
-                  <label for="email"><input type="email" placeholder="Email" id="email" class="form-control"></label>
+                <label for="firstname" class="text-style">First name:</label>
+                <input type="text" placeholder="First name" id="firstName" class="form-control">
+                <div id="firstName-error" class="error-text"></div>
+              </div>            
+              <div class="col-4">
+                <label for="lastname" class="text-style">Last name:</label>
+                <input type="text" placeholder="Last name" id="lastName" class="form-control">
+                <div id="lastName-error" class="error-text"></div>
+              </div>             
+              <div class="col-4 pb-2">
+                <label for="email" class="text-style">Email:</label>
+                <input type="text" placeholder="Email" id="email" class="form-control">
+                <div id="email-error" class="error-text"></div>
               </div>
-              <div class="col-2">
-                <button id="btn" class="btn btn-info w-100">Add user</button>
-                <div id="email-error"></div>
-            </div>         
+              <div class="col-2 pb-5">
+                <button id="btn" class="btn btn-submit w-100">Submit</button>
+              </div>         
             </div>
           </form>
         
