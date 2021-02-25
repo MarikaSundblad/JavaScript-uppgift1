@@ -7,14 +7,14 @@ const email = document.querySelector('#email');
 const emailError = document.querySelector('#email-error');
 const output = document.querySelector('#output');
 
+
+// Kollar så det inte är några siffror
+const regExName =  /\d+/; 
+
 // Validerar förnamn
 const validateFirstName = () => {
-
-  // Kollar så det inte är några siffror i namnet
-  let regEx = /\d+/;
-
     
-  if(regEx.test(firstName.value)) {
+  if(regExName.test(firstName.value)) {
     firstNameError.innerText = 'You can not have numbers in your first name'
     return 0;
   }
@@ -30,11 +30,8 @@ const validateFirstName = () => {
 
 // Validerar efternamn
 const validateLastName = () => {
-
-  // Kollar så det inte är några siffror i namnet
-  let regEx = /\d+/;
     
-  if(regEx.test(lastName.value)) {
+  if(regExName.test(lastName.value)) {
     lastNameError.innerText = 'You can not have numbers in your last name'
     return 0;
   }
