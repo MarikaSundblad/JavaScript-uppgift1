@@ -48,9 +48,7 @@ const validateLastName = () => {
 // Validerar email
 const validateEmail = () => {
 
-  // Kollar emailen. Går inte att ha åäö innan @.
-  // Går att ha åäö efter @ då vissa kan ha åäö i sin domän och använder domänens mejl.
-  let regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  let regEx = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
   
   if(!regEx.test(email.value)) {
     emailError.innerText = 'You have to put in a valid email'
@@ -76,7 +74,6 @@ class User {
     this.email = email;
     this.id = Date.now().toString()
     this.listener = false;
-    // console.log(this)
   }
 }
 
